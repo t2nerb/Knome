@@ -37,3 +37,15 @@ Collaboration Tools
 * Github for version control
 * [Github Projects](https://github.com/t2nerb/Knome/projects) for project management
 * Google docs for documents
+
+Team 6 Members
+-------------------
+|Names | Emails | Github Username |
+|:----------------:|----------------|-----------|
+|Brent Dagdagan|brent.dagdagan@colorado.edu|t2nerb
+|Samuel Anoff|samuel.anoff@colorado.edu|sanoff
+|Andrew Casner|andrew.casner@colorado.edu|Andrew-Casner
+|Frank Harvey|franklin.harvey@colorado.edu|franklinharvey
+|Sam Cuthbertson|samuel.cuthbertson@colorado.edu|scuthbert
+|Daniel Holmes|daniel.holmes@colorado.edu|dholmescu
+                                                        
