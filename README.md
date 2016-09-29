@@ -4,8 +4,8 @@ CSCI3308 project by Team6.
 
 Project Description
 ----------------
-    Social networking has been proven to be one of the most successful ideas facilitated by the internet. What we aim to do, is create an interactive map, where users can see events submitted by other users. These events can be anything! Whether you want to make others aware of a street performances, public events, or garage sales, other users  browsing the map can see these events provided they are in close proximity to them. 
-    On the technical side, when a user submits an event, the geolocation of the user’s device is sent to the server, where we then plot the event on the universal map. Other users who are close in proximity would be able to view the events on this map, with the ability to change the radius of their range, depending on their mobility. With time, we plan on implementing features to the interactive map, such as highlighting regions of high crime-activity, or highly congested areas. 
+Social networking has been proven to be one of the most successful ideas facilitated by the internet. What we aim to do, is create an interactive map, where users can see events submitted by other users. These events can be anything! Whether you want to make others aware of a street performances, public events, or garage sales, other users  browsing the map can see these events provided they are in close proximity to them. 
+On the technical side, when a user submits an event, the geolocation of the user’s device is sent to the server, where we then plot the event on the universal map. Other users who are close in proximity would be able to view the events on this map, with the ability to change the radius of their range, depending on their mobility. With time, we plan on implementing features to the interactive map, such as highlighting regions of high crime-activity, or highly congested areas. 
 
 Vision Statement
 -------------------
