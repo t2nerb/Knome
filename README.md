@@ -11,8 +11,7 @@ On the technical side, when a user submits an event, the geolocation of the user
 
 Vision Statement
 -------------------
-
-
+For local communities who want to connect, Knome is an event mapping tool that provides real time information regarding local events and activities nearby. Unlike other interactive maps, our product adds social networking to give the user relevant information about the events taking place around them.
 
 Risks
 -------------------
