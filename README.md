@@ -29,12 +29,12 @@ Risk mitigation plan
 
 Software Development Methodology:
 -----------------------------
-* This project will utilize an Agile workflow, with project management done through Github Projects on the [main fork](https://github.com/t2nerb/Knome/tree/master) of the repository
+* This project will utilize an Agile workflow, with project management done through [Github Projects](https://github.com/t2nerb/Knome/projects) on the [main fork](https://github.com/t2nerb/Knome/tree/master) of the repository
 
 
 Collaboration Tools
 ---------------------
 * Slack for communication
 * Github for version control
-* Github Projects for project management
+* [Github Projects](https://github.com/t2nerb/Knome/projects) for project management
 * Google docs for documents
