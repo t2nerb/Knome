@@ -1,3 +1,5 @@
+![alt text](https://github.com/t2nerb/Knome/blob/master/Knome-01.jpg?raw=true "Knome Logo")
+
 Knome by Team6
 =================================
 CSCI3308 project by Team6. 
