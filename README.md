@@ -44,7 +44,7 @@ User Requirements
 Functional Requirments
 -----------------------
 
-Non-FUnctional Requirments
+Non-Functional Requirments
 ---------------------------
 
 Team 6 Members
