@@ -38,6 +38,15 @@ Collaboration Tools
 * [Github Projects](https://github.com/t2nerb/Knome/projects) for project management
 * Google docs for documents
 
+User Requirements
+------------------
+
+Functional Requirments
+-----------------------
+
+Non-FUnctional Requirments
+---------------------------
+
 Team 6 Members
 -------------------
 |Names | Emails | Github Username |
