@@ -49,3 +49,18 @@ Team 6 Members
 |Sam Cuthbertson|samuel.cuthbertson@colorado.edu|scuthbert
 |Daniel Holmes|daniel.holmes@colorado.edu|dholmescu
                                                         
+
+How to
+----------------------
+1. Install Virtualenv to set up the virtual environment:
+'''
+virtualenv .
+'''
+2. Install dependencies with pip3:
+'''
+pip3 install -r requirements.txt
+'''
+3. Run the app:
+'''
+python3 server.py
+'''

@@ -1,14 +1,22 @@
-from flask import Flask
+from flask import Flask, request
 
 Knome = Flask(__name__)
 
 @Knome.route('/')
 def index():
-    return ('Put shit here')
+    return ('Method: %s' % request.method)
 
-@Knome.route('/profile/<username>')
+@Knome.route('/profile/<username>', methods=['GET', 'POST'])
 def profile(username):
-    return ("Hey there %s" % username)
+
+    return ("%s's profile page" % username)
+@Knome.route('/test')
+def test():
+    #GET is used by URL
+    if request.method == 'GET':
+        return ("Using GET, dud")
+    elif request.method == 'POST':
+        return ("Using POST, dipshit")
 
 if __name__ == "__main__":
     Knome.run()
