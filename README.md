@@ -56,11 +56,15 @@ How to
 ```
 virtualenv .
 ```
-2. Install dependencies with pip3:
+2. Set path to the virtual environment:
+```
+source bin/activate
+``` 
+3. Install dependencies with pip3:
 ```
 pip3 install -r requirements.txt
 ```
-3. Run the app:
+4. Run the app:
 ```
 python3 server.py
 ```
