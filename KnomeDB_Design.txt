@@ -1,0 +1,58 @@
+﻿Design Document: 
+
+
+Database: Firebase - KnomeDB
+Database Link: https://console.firebase.google.com/project/knomedb/database/data
+Database Type: NoSQL: Key-value
+
+
+Database components - Database architecture is structured like JSON in key-value format. Data is retrieved through either GET or curl through a RESTful API. Data is stored either manually by administrators of the database of automatically through POST’s and PUT’s in JavaScript or embedded in HTML. Will be utilized in tandem with AngularJS and Google Maps API. 
+
+
+Current infrastructure of database: One database with 4 main components: Events, People, Locations, and Cities. These will be used to populate the pins within the Google Maps API:
+
+
+Cities: Used to describe cities in which users might find themselves
+            Current number of entries: 4
+        Attributes:
+                    Cost: Average expected expenditure on a scale of 1-10
+                    Size: Relative to population
+                    Population: Number of residents
+                    Type: Usually based on physical location
+                    isUniversity: boolean depending on if specified city is a college town.
+
+
+Events: Used to describe current events - user made and specified
+            Current number of entries: 4
+            Attributes:
+                    Cost: Price of events
+                    ageRec: A boolean indicating a minimum age
+                    Location: Physical location of event
+                    Time: Time in MST of event
+                    Type: Type of event eg. Concert, food, etc.
+
+
+Users: Used to describe each unique user
+            Current number of entries: 4
+            Attributes:
+                    FirstName: First name of user
+                    LastName: Last name of user
+                    Points: Representative of user’s reputation or lack thereof
+                    dateJoined: When the user joined the app
+                    isAdmin: Indicates if user has administrative privileges
+
+
+
+
+
+
+
+
+Locations: Outline individual locations within cities
+            Current number of entries: 4
+            Attributes:
+                           City: City of location
+                    Description: Short text description of location
+                    Type: Typical attractions of location
+                           University: Indicates if a university owns the location
+                    isPublic: Indicates if location is open to the public.
