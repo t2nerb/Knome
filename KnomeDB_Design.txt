@@ -6,10 +6,14 @@ Database Link: https://console.firebase.google.com/project/knomedb/database/data
 Database Type: NoSQL: Key-value
 
 
-Database components - Database architecture is structured like JSON in key-value format. Data is retrieved through either GET or curl through a RESTful API. Data is stored either manually by administrators of the database of automatically through POST’s and PUT’s in JavaScript or embedded in HTML. Will be utilized in tandem with AngularJS and Google Maps API. 
+Database components - Database architecture is structured like JSON in key-value format. 
+Data is retrieved through either GET or curl through a RESTful API. 
+Data is stored either manually by administrators of the database of automatically 
+through POST’s and PUT’s in JavaScript or embedded in HTML. Will be utilized in tandem with AngularJS and Google Maps API. 
 
 
-Current infrastructure of database: One database with 4 main components: Events, People, Locations, and Cities. These will be used to populate the pins within the Google Maps API:
+Current infrastructure of database: One database with 4 main components: Events, People, Locations, and Cities. 
+These will be used to populate the pins within the Google Maps API:
 
 
 Cities: Used to describe cities in which users might find themselves
@@ -31,7 +35,6 @@ Events: Used to describe current events - user made and specified
                     Time: Time in MST of event
                     Type: Type of event eg. Concert, food, etc.
 
-
 Users: Used to describe each unique user
             Current number of entries: 4
             Attributes:
@@ -40,13 +43,6 @@ Users: Used to describe each unique user
                     Points: Representative of user’s reputation or lack thereof
                     dateJoined: When the user joined the app
                     isAdmin: Indicates if user has administrative privileges
-
-
-
-
-
-
-
 
 Locations: Outline individual locations within cities
             Current number of entries: 4
