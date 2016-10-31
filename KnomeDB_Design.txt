@@ -8,7 +8,7 @@ Database Type: NoSQL: Key-value
 
 Database components - Database architecture is structured like JSON in key-value format. 
 Data is retrieved through either GET or curl through a RESTful API. 
-Data is stored either manually by administrators of the database of automatically 
+Data is stored either manually by administrators of the database or automatically 
 through POST’s and PUT’s in JavaScript or embedded in HTML. Will be utilized in tandem with AngularJS and Google Maps API. 
 
 
