@@ -2,16 +2,41 @@ target market:
 	college aged students (18-23):
 		snapchat users (for spontanaeity):
 			100M (daily active)
+		Instagram users:
+			300M (daily active)
+		Twitter users:
+			313M (monthly)
+		Facebook users:
+			1.13B (daily active)
+		Universities:
+			17.4M students
+			4,140 colleges in US
+			62 -average # of parties attended per year/student
+			1.125M students attending spring break
+			49M attendance of football games
+		Concerts:
+			$4.71b industry
+			59.78M tickets sold
+		Alcohol(social activities in college usually contain alcohol):
+			44% of students binge drink
+			$42 per month/student for booze
+			$2,000 over 4-years/student
+			
+			
+	post grads (24-28):
 		
-	post grads (24-28)
+	professional networks?:
+		LinkedIn users:
+			300M (daily active)
 profile of competitors:
 	Facebook events (huge numbers, non-spontaneous)
 	Snapchat (high visibility, small # of events)
-	Foursquare (Still a thing?)
+	Foursquare (Still a thing?) - I dont think so...
 Competitive advantage:
 	Benefits to customer:
 		Available to public
 		Self expiring
-		easy to find
+		Easy to find
+		Basic and intuitive
 	Price:
 		Free
