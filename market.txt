@@ -14,9 +14,11 @@ target market:
 			62 -average # of parties attended per year/student
 			1.125M students attending spring break
 			49M attendance of football games
-		Concerts:
-			$4.71b industry
-			59.78M tickets sold
+                School Events: 
+                        27% of students are not aware of events
+                Concerts:
+                        $4.71b industry
+                        59.78M tickets sold
 		Alcohol(social activities in college usually contain alcohol):
 			44% of students binge drink
 			$42 per month/student for booze
@@ -25,9 +27,10 @@ target market:
 			
 	post grads (24-28):
 		Maybe just focus on college students? It's a little self centered, but simplifies the graphic.
-	professional networks?:
+	professional networks:
 		LinkedIn users:
 			300M (daily active)
+                Public events (science fairs, tech talks, etc.)
 profile of competitors:
 	Facebook events (huge numbers, non-spontaneous)
 	Snapchat (high visibility, small # of events)
@@ -35,8 +38,11 @@ profile of competitors:
 Competitive advantage:
 	Benefits to customer:
 		Available to public
-		Self expiring
+                Exploration
+                Community unity
+                Awareness of surroundings
 		Easy to find
 		Basic and intuitive
+                
 	Price:
 		Free

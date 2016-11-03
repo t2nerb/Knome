@@ -1,11 +1,13 @@
 Team Retrospective
 
 Good:
-    -Our team has come togeather to compleate all milestones so far.
+    -Our team has come together to complete all milestones so far.
     -Our idea is coming togeather well and the team is excited about it.
     -Development is underway.
+    -Established tools and frameworks needed to complete the project.
 Bad:
     -Our team has been very busy and has not been able to put as much time into the project.
+    -Uncertainties in our assigned roles for the project.
     -We need to work on our communication and meet more frequently.
     -Development has been slow.
 
@@ -14,3 +16,4 @@ Plan Going Foreward:
     -We plan to meet more frequently.
     -We plan to hold eachother more accountable for their responsibilities.
     -We plan to speed up development.
+    -Have at least, a view of the map with events by the end of the semester.
