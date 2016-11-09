@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 Knome = Flask(__name__)
 
@@ -18,9 +18,9 @@ def test():
     elif request.method == 'POST':
         return ("Using POST, dipshit")
 
-@Knome.route('/create')
+@Knome.route('/login', methods=['GET', 'POST'])
 def create():
-    return render_template("profile.html")
+    return render_template("login.html")
 
 if __name__ == "__main__":
     Knome.run()
