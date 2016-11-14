@@ -11,11 +11,31 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2">
-					<h1>Knome<h1>
+					<img src="img/Knome-01.jpg" width="25%">
 				</div>
 			</div>
 		</div>
 		<div id="map"></div>
+		<div id="login">
+		<link rel="stylesheet" href="login.css">
+		<form class="modal-content animate" action="HI BRENT">
+    		<div class="imgcontainer">
+      			<img src="img/img_avatar2.png" alt="Avatar" width="25%" align="left">
+    		</div>
+			<div class="container">
+      			<label><b>Username</b></label>
+      			<input type="text" placeholder="Enter Username" name="uname" required>
+				<label><b>Password</b></label>
+      			<input type="password" placeholder="Enter Password" name="psw" required>
+				<button type="submit">Login</button>
+      			<input type="checkbox" checked="checked"> Remember me
+    		</div>
+			<div class="container" style="background-color:#f1f1f1">
+      			<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      			<span class="psw">Forgot <a href="#">password?</a></span>
+    		</div>
+  		</form>
+  		</div>
 		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js"></script>
