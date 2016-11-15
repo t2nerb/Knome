@@ -1,10 +1,10 @@
-/* Bordered form */
+ /* Bordered form */
 form {
     border: 3px solid #f1f1f1;
 }
 
 /* Full-width inputs */
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=email] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -28,7 +28,7 @@ button {
 .cancelbtn {
     width: auto;
     padding: 10px 18px;
-    background-color: #f44336;
+    background-color: #000000;
 }
 
 /* Center the avatar image inside this container */

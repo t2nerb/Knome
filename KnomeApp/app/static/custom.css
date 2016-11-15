@@ -17,5 +17,9 @@ h1{
 	color: #999;
 }
 
-
-
+.small-profile{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 24;
+	float: right;
+	margin-top: 10px;
+}

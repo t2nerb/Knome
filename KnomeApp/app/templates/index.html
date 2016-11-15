@@ -5,38 +5,48 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-		<link href='custom.css' rel='stylesheet' type='text/css'>
+		<link href='../static/custom.css' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="../static/login.css">
 	</head>
 	<body>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2">
-					<a href="index.html"><img src="img/Knome-01.jpg" width="25%"></a>
+					<a href="index.html"><img src="../static/img/knomelogo.svg" width="25%"></a>
+					<h1 class="small-profile" id="userID"></h1>
 				</div>
 			</div>
 		</div>
+		
 		<div id="map"></div>
 		<div id="login">
-		<link rel="stylesheet" href="login.css">
+
 		<!-- HI BRENT HERES THE ACTION CALL -->
-		<form class="modal-content animate" action="BRENT.js">
 			<div class="container">
-      			<label><b>Username</b></label>
-      			<input type="text" placeholder="Enter Username" name="uname" required>
-				<label><b>Password</b></label>
-      			<input type="password" placeholder="Enter Password" name="psw" required>
-				<button type="submit">Login</button>
-      			<input type="checkbox" checked="checked"> Remember me
+      			<input id="txtEmail" type="email" placeholder="Email">
+      			
+      			<input id="txtPassword" type="password" placeholder="Password">
+				
+				<button id="btnLogin" class="btn btn-action">
+					Log in
+				</button>
+				
+				<button id="btnSignUp" class="btn btn-secondary">
+					Sign Up
+				</button>
+				
+				<button id="btnLogout" class="btn btn-action hide">
+					Log Out
+				</button>
     		</div>
-			<div class="container" style="background-color:#f1f1f1">
-      			<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      			<span class="psw">Forgot <a href="#">password?</a></span>
-    		</div>
+
   		</form>
   		</div>
+  		<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+  		<script src="../static/app.js"></script>
 		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js"></script>
-		<script src="map.js"></script>
+		<script src="../static/map.js"></script>
 	</body>
 </html>
