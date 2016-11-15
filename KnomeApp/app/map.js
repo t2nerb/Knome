@@ -6,7 +6,9 @@ $(function(){
 			center: location,
 			zoom: 16,
 			panControl: false,
+			streetViewControl: false,
 			scrollwheel: true,
+			mapTypeControl: false,
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		}
 		var map = new google.maps.Map(mapCanvas, mapOptions);
