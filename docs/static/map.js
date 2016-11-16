@@ -1,15 +1,5 @@
 $(function(){
 
-	// Initialize Firebase
-  const config = {
-    apiKey: "AIzaSyBu25CVtUZakZ1eyA1H_m7E2ni12cl8tRE",
-    authDomain: "knomedb.firebaseapp.com",
-    databaseURL: "https://knomedb.firebaseio.com",
-    storageBucket: "knomedb.appspot.com",
-    messagingSenderId: "712655229098"
-  };
-  firebase.initializeApp(config);
-
 	function initMap(){
 		var location = new google.maps.LatLng(40.0150, -105.2705);
 		var mapCanvas = document.getElementById('map');
@@ -40,7 +30,9 @@ $(function(){
             };
 
             newMarker.setPosition(pos);
-            newMarker.setContent('We found you.');
+            newMarker.setContent('<p>We found you!</p>' + 
+											'<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#new_event"> Create Event'
+											+ '</button>');
             map.setCenter(pos);
           }, function() {
             handleLocationError(true, newMarker, map.getCenter());

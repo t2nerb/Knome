@@ -14,7 +14,7 @@ input[type=text], input[type=password], input[type=email] {
 }
 
 /* Set a style for all buttons */
-button {
+/*button {
     background-color: #FF931E;
     color: white;
     padding: 14px 20px;
@@ -22,13 +22,18 @@ button {
     border: none;
     cursor: pointer;
     width: 100%;
-}
+}*/
 
 /* Extra style for the cancel button (red) */
-.cancelbtn {
+/*.cancelbtn {
     width: auto;
     padding: 10px 18px;
     background-color: #000000;
+}
+For both of the button things above: see http://getbootstrap.com/css/#buttons
+*/
+.btn-knome {
+    background-color: #FF931E;
 }
 
 /* Center the avatar image inside this container */

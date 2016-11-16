@@ -15,6 +15,7 @@
 	const btnLogin = document.getElementById('btnLogin');
 	const btnSignUp = document.getElementById('btnSignUp');
 	const btnLogout = document.getElementById('btnLogout');
+	const loginForm = document.getElementById('login_form');
 
 	//add login event
 	btnLogin.addEventListener('click', e => {
@@ -45,14 +46,16 @@
 		if (firebaseUser){
 			console.log(firebaseUser);
 			btnLogout.classList.remove('hide');
+			loginForm.classList.add('hide')
 		} else {
 			console.log('not logged in');
 			btnLogout.classList.add('hide');
+			loginForm.classList.remove('hide')
 		}
 	});
 
 
 	var userID = document.getElementById('userID');
 	var dbRef = firebase.database().ref().child('text');
-	dbRef.on('value', snap => userID.innerText = snap.val());
+	//dbRef.on('value', snap => userID.innerText = snap.val());
 }());
