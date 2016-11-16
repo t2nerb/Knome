@@ -18,6 +18,28 @@ $(function(){
 			map: map,
 			icon: markerImage
 		});
+		
+		var newMarker = new google.maps.InfoWindow({map: map});
+
+		if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            newMarker.setPosition(pos);
+            newMarker.setContent('We found you.');
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, newMarker, map.getCenter());
+
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, newMarker, map.getCenter());
+        }
+
 		var eventName = 'FUN TIMES';
 		var eventDetails = 'WOW THIS IS FUN';
 
