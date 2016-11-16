@@ -9,20 +9,15 @@
 		<link rel="stylesheet" href="../static/login.css">
 	</head>
 	<body>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-					<a href="index.html"><img src="../static/img/knomelogo.svg" width="25%"></a>
-					<h1 class="small-profile" id="userID"></h1>
-				</div>
-			</div>
-		</div>
-		
+		<nav>
+			<a href="#top"><img src="../static/img/Knome-01.jpg" class="logo"></a>
+		</nav>
 		<div id="map"></div>
 		<div id="login">
 
 		<!-- HI BRENT HERES THE ACTION CALL -->
-			<div class="container">
+			<button type="button" class="btn btnCollapse" data-toggle="collapse" data-target="#demo">Need to log in?</button>
+			<div id="demo" class="collapse">
       			<input id="txtEmail" type="email" placeholder="Email">
       			
       			<input id="txtPassword" type="password" placeholder="Password">
@@ -39,8 +34,6 @@
 					Log Out
 				</button>
     		</div>
-
-  		</form>
   		</div>
   		<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
   		<script src="../static/app.js"></script>
