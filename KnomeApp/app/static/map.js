@@ -18,11 +18,13 @@ $(function(){
 			map: map,
 			icon: markerImage
 		});
+		var eventName = 'FUN TIMES';
+		var eventDetails = 'WOW THIS IS FUN';
 
 		var contentString = '<div class="info-window">' +
-				'<h3>Event Name</h3>' +
+				'<h3 class="brand"> ' + eventName + ' </h3>' +
 				'<div class="info-content">' +
-				'<p>Event Details</p>' +
+				'<p> ' + eventDetails + ' </p>' +
 				'</div>' +
 				'</div>';
 
@@ -33,6 +35,9 @@ $(function(){
 
 		marker.addListener('click', function () {
 			infowindow.open(map, marker);
+		});
+		map.addListener('click', function () {
+			infowindow.close(map, marker);
 		});
 
 		var styles = [{"featureType": "landscape", "stylers": [{"saturation": 0}, {"lightness": 0}, {"visibility": "on"}]}, {"featureType": "poi", "stylers": [{"saturation": -10}, {"lightness": 51}, {"visibility": "simplified"}]}, {"featureType": "road.highway", "stylers": [{"saturation": 0}, {"visibility": "simplified"}]}, {"featureType": "road.arterial", "stylers": [{"saturation": 0}, {"lightness": 30}, {"visibility": "on"}]}, {"featureType": "road.local", "stylers": [{"saturation": 0}, {"lightness": 40}, {"visibility": "on"}]}, {"featureType": "transit", "stylers": [{"saturation": 0}, {"visibility": "simplified"}]}, {"featureType": "administrative.province", "stylers": [{"visibility": "off"}]}, {"featureType": "water", "elementType": "labels", "stylers": [{"visibility": "on"}, {"lightness": 0}, {"saturation": 0}]}, {"featureType": "water", "elementType": "geometry", "stylers": [{"hue": "#8eb7ff"}, {"lightness": 0}, {"saturation": 0}]}];
