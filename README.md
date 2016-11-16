@@ -1,4 +1,4 @@
-![alt text](https://github.com/t2nerb/Knome/raw/master/KnomeApp/app/static/img_avatar2.png?raw=true "Knome Logo")
+![alt text](https://github.com/t2nerb/Knome/raw/master/KnomeApp/app/static/img/Knome-01.jpg?raw=true "Knome Logo")
 
 Knome by Team6
 =================================
