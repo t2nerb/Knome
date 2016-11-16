@@ -1,4 +1,15 @@
 $(function(){
+
+	// Initialize Firebase
+  const config = {
+    apiKey: "AIzaSyBu25CVtUZakZ1eyA1H_m7E2ni12cl8tRE",
+    authDomain: "knomedb.firebaseapp.com",
+    databaseURL: "https://knomedb.firebaseio.com",
+    storageBucket: "knomedb.appspot.com",
+    messagingSenderId: "712655229098"
+  };
+  firebase.initializeApp(config);
+
 	function initMap(){
 		var location = new google.maps.LatLng(40.0150, -105.2705);
 		var mapCanvas = document.getElementById('map');
@@ -18,7 +29,7 @@ $(function(){
 			map: map,
 			icon: markerImage
 		});
-		
+
 		var newMarker = new google.maps.InfoWindow({map: map});
 
 		if (navigator.geolocation) {
@@ -39,6 +50,29 @@ $(function(){
           // Browser doesn't support Geolocation
           handleLocationError(false, newMarker, map.getCenter());
         }
+
+		//Have to dynamically update reads - Using snapshots, we can do this with an event handler. - jquery
+    //var database = firebase.database()
+		/*
+		function readEventdata(event, Char){
+		    var eventinfo = firebase.database().ref('Events/' + event + '/' + Char);
+		    eventinfo.on('value', function(snapshot)){
+					updateChar(postElement, snapshot.val())
+		}
+	}
+	*/
+
+		/*function writeEventData(eventname, location, price, time, type, agerec){
+			firebase.database().ref('Events/' + eventame).set(
+				{
+					Location: location,
+					Price: price,
+					Time: time,
+					ageRec: agerec,
+					Type: type
+				}
+			)
+		}*/
 
 		var eventName = 'FUN TIMES';
 		var eventDetails = 'WOW THIS IS FUN';
