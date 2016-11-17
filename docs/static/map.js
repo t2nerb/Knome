@@ -23,7 +23,7 @@ $(function () {
 		});
 
 		var addWindow = new google.maps.InfoWindow({ map: map });
-		var addMarker = new google.maps.Marker({
+		addMarker = new google.maps.Marker({
 			map: map,
 			icon: markerImage
 		});
