@@ -56,6 +56,7 @@
         const description = createdescription.value;
         const posWrite = pos;
         addMarker.setVisible(false);
+        addWindow.close();
 
         //error handling for event creation
         if (title == ""){

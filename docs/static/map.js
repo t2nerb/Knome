@@ -22,7 +22,7 @@ $(function () {
 			animation: google.maps.Animation.DROP,
 		});
 
-		var addWindow = new google.maps.InfoWindow({ map: map });
+		addWindow = new google.maps.InfoWindow({ map: map });
 		addMarker = new google.maps.Marker({
 			map: map,
 			icon: markerImage
