@@ -46,6 +46,9 @@ $(function () {
 					+ '</button>');
 				map.setCenter(pos);
 				addWindow.open(map, addMarker);
+				map.addListener('click', function () {
+					addWindow.close(map, addMarker);
+				});
 			}, function () {
 				handleLocationError(true, addMarker, map.getCenter());
 
@@ -78,14 +81,8 @@ $(function () {
 			});
 			newMarker.setPosition(snap.val().Position);
 
-			newMarker.addListener('click', function () {
-				addWindow.open(map, newMarker);
-			});
-
 			eventDetails = snap.val().Description;
 			eventName = snap.key;
-			console.log(eventName);
-			console.log(eventDetails);
 
 			var contentString = '<div class="info-window">' +
 			'<h3 class="brand"> ' + eventName + ' </h3>' +
@@ -97,6 +94,14 @@ $(function () {
 			var infowindow = new google.maps.InfoWindow({
 			content: contentString,
 			maxWidth: 400
+			});
+
+			newMarker.addListener('click', function() {
+				infowindow.open(map, newMarker);
+			});
+
+			map.addListener('click', function () {
+				infowindow.close(map, newMarker);
 			});
 
 		});
