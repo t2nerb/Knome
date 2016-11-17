@@ -90,4 +90,8 @@
 			Description : description
 		});
 	};
+
+    function bootstrap_alert(message) {
+        $('#alert_placeholder').html('<div class="alert"><a class="close" data-dismiss="alert">×</a><span>'+message+'</span></div>')
+    }
 }());
