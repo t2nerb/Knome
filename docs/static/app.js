@@ -1,14 +1,14 @@
 (function() {
 
 	// Initialize Firebase
-	const config = {
-		apiKey: "AIzaSyCPZd9X-l1LlbqJrDHbrLDE2FsF6fyWBV0",
-		authDomain: "knomedb-89499.firebaseapp.com",
-		databaseURL: "https://knomedb-89499.firebaseio.com",
-		storageBucket: "knomedb-89499.appspot.com",
-		messagingSenderId: "83063709381"
-	};
-	firebase.initializeApp(config);
+  const config = {
+    apiKey: "AIzaSyBu25CVtUZakZ1eyA1H_m7E2ni12cl8tRE",
+    authDomain: "knomedb.firebaseapp.com",
+    databaseURL: "https://knomedb.firebaseio.com",
+    storageBucket: "knomedb.appspot.com",
+    messagingSenderId: "712655229098"
+  };
+  firebase.initializeApp(config);
 
 	const txtEmail = document.getElementById('txtEmail');
 	const txtPassword = document.getElementById('txtPassword');
@@ -16,6 +16,8 @@
 	const btnSignUp = document.getElementById('btnSignUp');
 	const btnLogout = document.getElementById('btnLogout');
 	const loginForm = document.getElementById('login_form');
+    const btnCreateSave = document.getElementById('btnCreateSave');
+
 
 	//add login event
 	btnLogin.addEventListener('click', e => {
@@ -41,6 +43,19 @@
 	btnLogout.addEventListener('click', e => {
 		firebase.auth().signOut();
 	});
+    
+    btnCreateSave.addEventListener('click', e =>{
+        const title = createtitle.value;
+        const desc = createtitle.value;
+        if (title == ""){
+            console.log("no title input")
+        }
+        if (desc == ""){
+            console.log("no desc input")
+        }
+        
+    });
+        
 
 	firebase.auth().onAuthStateChanged(firebaseUser => {
 		if (firebaseUser){

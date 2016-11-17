@@ -16,11 +16,10 @@
 	<div class="container">
 		<!--TO FILL PAGE, CHANGE THIS CLASS TO "fluid-container" -->
 		<div class="row">
-			<div class="col-sm-4">
-				<a href="#top"><img src="static/img/Knome-01.jpg" height="150px"></a>
+			<div class="col-lg-6">
+				<a href="#top"><img src="static/img/Knome-01.jpg" class="img-responsive" height="150px"></a>
 			</div>
-			<div class="col-sm-2"></div>
-			<div class="col-sm-6">
+			<div class="col-lg-6">
 				<div id="login">
 					<div id="login_form">
 						<button type="button" class="btn btnCollapse btn-info btn-block" data-toggle="collapse" data-target="#demo">Need to log in?</button>
@@ -54,14 +53,22 @@
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
           						<span aria-hidden="true">&times;</span>
         					</button>
-						<h4 class="modal-title" id="myModalLabel">Create A New Event</h4>
+                        <h4 class="modal-title" id="myModalLabel">Create A New Event</h4>
 					</div>
 					<div class="modal-body">
-						Put a form here? I'm not sure what the database needs for dis
+                        <div class="form-group">
+                            <label>Title</label>
+                            <input type="text" class="form-control" id="createtitle" placeholder="Title">
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <input type="text" class="form-control" id="createdescription" placeholder="Description">
+                        </div>
 					</div>
-					<div class="modal-footer">
+
+
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary btn-default" data-dismiss="modal">Save</button>
+						<button id="btnCreateSave" type="button" class="btn btn-primary btn-default" data-dismiss="modal">Save</button>
 					</div>
 				</div>
 			</div>
@@ -72,6 +79,7 @@
 	<script src="static/app.js"></script>
 	<script src="static/map.js"></script>
 	<script src="static/login.js"></script>
+	<script src="static/event.js"></script>
 </body>
 
 </html>
