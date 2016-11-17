@@ -1,14 +1,14 @@
 (function() {
 
 	// Initialize Firebase
-	const config = {
-		apiKey: "AIzaSyCPZd9X-l1LlbqJrDHbrLDE2FsF6fyWBV0",
-		authDomain: "knomedb-89499.firebaseapp.com",
-		databaseURL: "https://knomedb-89499.firebaseio.com",
-		storageBucket: "knomedb-89499.appspot.com",
-		messagingSenderId: "83063709381"
-	};
-	firebase.initializeApp(config);
+  const config = {
+    apiKey: "AIzaSyBu25CVtUZakZ1eyA1H_m7E2ni12cl8tRE",
+    authDomain: "knomedb.firebaseapp.com",
+    databaseURL: "https://knomedb.firebaseio.com",
+    storageBucket: "knomedb.appspot.com",
+    messagingSenderId: "712655229098"
+  };
+  firebase.initializeApp(config);
 
 	const txtEmail = document.getElementById('txtEmail');
 	const txtPassword = document.getElementById('txtPassword');
@@ -16,6 +16,12 @@
 	const btnSignUp = document.getElementById('btnSignUp');
 	const btnLogout = document.getElementById('btnLogout');
 	const loginForm = document.getElementById('login_form');
+    const btnCreateSave = document.getElementById('btnCreateSave');
+    userInfo = null;
+
+	const txtTitle = document.getElementById('createtitle');
+	const txtDescription = document.getElementById('createdescription');
+
 
 	//add login event
 	btnLogin.addEventListener('click', e => {
@@ -42,12 +48,30 @@
 		firebase.auth().signOut();
 	});
 
+    btnCreateSave.addEventListener('click', e =>{
+        const title = txtTitle.value;
+        const description = txtDescription.value;
+        console.log(title);
+        console.log(description);
+        if (title == ""){
+            console.log("no title input")
+            return;
+        }
+        if (description == ""){
+            console.log("no desc input")
+            return;
+        }
+        writeUserData(title,description);
+    });
+        
+
 	firebase.auth().onAuthStateChanged(firebaseUser => {
 		if (firebaseUser){
-			console.log(firebaseUser);
+			userInfo = firebaseUser;
 			btnLogout.classList.remove('hide');
 			loginForm.classList.add('hide')
 		} else {
+			userInfo = null;
 			console.log('not logged in');
 			btnLogout.classList.add('hide');
 			loginForm.classList.remove('hide')
@@ -58,4 +82,10 @@
 	var userID = document.getElementById('userID');
 	var dbRef = firebase.database().ref().child('text');
 	//dbRef.on('value', snap => userID.innerText = snap.val());
+
+	function writeUserData(title, description) {
+		firebase.database().ref("Events/" + title).set({
+			Description : description
+		});
+	};
 }());
