@@ -1,6 +1,6 @@
 (function() {
 
-	// Initialize Firebase
+    // Initialize Firebase
   const config = {
     apiKey: "AIzaSyBu25CVtUZakZ1eyA1H_m7E2ni12cl8tRE",
     authDomain: "knomedb.firebaseapp.com",
@@ -30,7 +30,7 @@
 		const auth = firebase.auth();
 		//sign in
 		const promise = auth.signInWithEmailAndPassword(email, pass);
-		promise.catch(e => console.log(e.message));
+		promise.catch(e => alert(e.message));
 	});
 	//sign up
 	btnSignUp.addEventListener('click', e =>{
@@ -41,7 +41,7 @@
 		//sign in
 		const promise = auth.createUserWithEmailAndPassword(email, pass);
 		promise
-			.catch(e => console.log(e.message));
+			.catch(e => alert(e.message));
 	});
 
 	btnLogout.addEventListener('click', e => {
@@ -49,16 +49,18 @@
 	});
 
     btnCreateSave.addEventListener('click', e =>{
-        const title = txtTitle.value;
-        const description = txtDescription.value;
-        console.log(title);
-        console.log(description);
+
+        const title = createtitle.value;
+        const description = createdescription.value;
+
         if (title == ""){
-            console.log("no title input")
+            console.log("NULL title")
+            alert('Please enter a title');
             return;
         }
         if (description == ""){
-            console.log("no desc input")
+            console.log("NULL description")
+            alert('Please enter a description');
             return;
         }
         writeUserData(title,description);
