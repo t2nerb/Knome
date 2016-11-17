@@ -41,7 +41,7 @@ $(function () {
 				addMarker.setIcon(addImage);
 				addMarker.setPosition(pos);
 				addWindow.setContent('<p>We found you!</p>' +
-					'<button type="button" class="btn btn-knome btn-primary btn-sm" data-toggle="modal" data-target="#new_event"> Create Event'
+					'<button type="button" class="btn btn-knome btn-sm" data-toggle="modal" data-target="#new_event"> Create Event'
 					+ '</button>');
 				map.setCenter(pos);
 				addWindow.open(map, addMarker);

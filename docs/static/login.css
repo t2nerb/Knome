@@ -34,6 +34,12 @@ For both of the button things above: see http://getbootstrap.com/css/#buttons
 */
 .btn-knome {
     background-color: #FF931E;
+    color: #FFFFFF;
+}
+
+.btn-knome:hover {
+    background-color: #EE820D;
+    color: #FFFFFF;
 }
 
 /* Center the avatar image inside this container */
