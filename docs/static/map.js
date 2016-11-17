@@ -18,7 +18,8 @@ $(function () {
 		var marker = new google.maps.Marker({
 			position: location,
 			map: map,
-			icon: markerImage
+			icon: markerImage,
+			animation: google.maps.Animation.DROP,
 		});
 
 		var addWindow = new google.maps.InfoWindow({ map: map });
@@ -46,37 +47,12 @@ $(function () {
 				map.setCenter(pos);
 				addWindow.open(map, addMarker);
 			}, function () {
-				handleLocationError(true, newMarker, map.getCenter());
+				handleLocationError(true, addMarker, map.getCenter());
 
 			});
 		} else {
 			// Browser doesn't support Geolocation
-			handleLocationError(false, newMarker, map.getCenter());
-		}
-
-
-
-		//Have to dynamically update reads - Using snapshots, we can do this with an event handler. - jquery
-		var database = firebase.database()
-
-		function readEventdata(event, Char) {
-			var eventinfo = firebase.database().ref('Events/' + event + '/' + Char);
-			eventinfo.on('value', function (snapshot) {
-				console.log(postElement, snapshot.val())
-			})
-		}
-
-
-		function writeEventData(eventname, location, price, time, type, agerec) {
-			firebase.database().ref('Events/' + eventame).set(
-				{
-					Location: location,
-					Price: price,
-					Time: time,
-					ageRec: agerec,
-					Type: type
-				}
-			)
+			handleLocationError(false, addMarker, map.getCenter());
 		}
 
 		var eventName = 'FUN TIMES';
@@ -93,6 +69,38 @@ $(function () {
 			content: contentString,
 			maxWidth: 400
 		});
+
+		dbEventsObject = firebase.database().ref().child('Events/');
+		dbEventsObject.on('child_added', snap=> {
+			var newMarker = new google.maps.Marker({
+				map: map,
+				icon: markerImage
+			});
+			newMarker.setPosition(snap.val().Position);
+
+			newMarker.addListener('click', function () {
+				addWindow.open(map, newMarker);
+			});
+
+			eventDetails = snap.val().Description;
+			eventName = snap.key;
+			console.log(eventName);
+			console.log(eventDetails);
+
+			var contentString = '<div class="info-window">' +
+			'<h3 class="brand"> ' + eventName + ' </h3>' +
+			'<div class="info-content">' +
+			'<p> ' + eventDetails + ' </p>' +
+			'</div>' +
+			'</div>';
+
+			var infowindow = new google.maps.InfoWindow({
+			content: contentString,
+			maxWidth: 400
+			});
+
+		});
+
 
 		marker.addListener('click', function () {
 			infowindow.open(map, marker);
