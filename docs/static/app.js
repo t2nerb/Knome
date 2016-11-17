@@ -16,6 +16,8 @@
 	const btnSignUp = document.getElementById('btnSignUp');
 	const btnLogout = document.getElementById('btnLogout');
 	const loginForm = document.getElementById('login_form');
+    const btnCreateSave = document.getElementById('btnCreateSave');
+
 
 	//add login event
 	btnLogin.addEventListener('click', e => {
@@ -41,6 +43,19 @@
 	btnLogout.addEventListener('click', e => {
 		firebase.auth().signOut();
 	});
+    
+    btnCreateSave.addEventListener('click', e =>{
+        const title = createtitle.value;
+        const desc = createtitle.value;
+        if (title == ""){
+            console.log("no title input")
+        }
+        if (desc == ""){
+            console.log("no desc input")
+        }
+        
+    });
+        
 
 	firebase.auth().onAuthStateChanged(firebaseUser => {
 		if (firebaseUser){
