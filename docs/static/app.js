@@ -17,6 +17,10 @@
 	const btnLogout = document.getElementById('btnLogout');
 	const loginForm = document.getElementById('login_form');
     const btnCreateSave = document.getElementById('btnCreateSave');
+    userInfo = null;
+
+	const txtTitle = document.getElementById('createtitle');
+	const txtDescription = document.getElementById('createdescription');
 
 
 	//add login event
@@ -43,30 +47,33 @@
 	btnLogout.addEventListener('click', e => {
 		firebase.auth().signOut();
 	});
-    
+
     btnCreateSave.addEventListener('click', e =>{
+
         const title = createtitle.value;
-        const desc = createdescription.value;
+        const description = createdescription.value;
 
         if (title == ""){
-            console.log("no title input");
+            console.log("NULL title")
             alert('Please enter a title');
-
+            return;
         }
-        if (desc == ""){
-            console.log("no desc input");
+        if (description == ""){
+            console.log("NULL description")
             alert('Please enter a description');
+            return;
         }
-        
+        writeUserData(title,description);
     });
         
 
 	firebase.auth().onAuthStateChanged(firebaseUser => {
 		if (firebaseUser){
-			console.log(firebaseUser);
+			userInfo = firebaseUser;
 			btnLogout.classList.remove('hide');
 			loginForm.classList.add('hide')
 		} else {
+			userInfo = null;
 			console.log('not logged in');
 			btnLogout.classList.add('hide');
 			loginForm.classList.remove('hide')
@@ -77,4 +84,10 @@
 	var userID = document.getElementById('userID');
 	var dbRef = firebase.database().ref().child('text');
 	//dbRef.on('value', snap => userID.innerText = snap.val());
+
+	function writeUserData(title, description) {
+		firebase.database().ref("Events/" + title).set({
+			Description : description
+		});
+	};
 }());
