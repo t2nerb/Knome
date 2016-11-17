@@ -41,7 +41,7 @@ $(function () {
 				addMarker.setIcon(addImage);
 				addMarker.setPosition(pos);
 				addWindow.setContent('<p>We found you!</p>' +
-					'<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#new_event"> Create Event'
+					'<button type="button" class="btn btn-knome btn-primary btn-sm" data-toggle="modal" data-target="#new_event"> Create Event'
 					+ '</button>');
 				map.setCenter(pos);
 				addWindow.open(map, addMarker);
@@ -101,7 +101,7 @@ $(function () {
 			infowindow.close(map, marker);
 		});
 
-		var styles = [{ "featureType": "landscape", "stylers": [{ "saturation": 0 }, { "lightness": 0 }, { "visibility": "on" }] }, { "featureType": "poi", "stylers": [{ "saturation": -10 }, { "lightness": 51 }, { "visibility": "simplified" }] }, { "featureType": "road.highway", "stylers": [{ "saturation": 0 }, { "visibility": "simplified" }] }, { "featureType": "road.arterial", "stylers": [{ "saturation": 0 }, { "lightness": 30 }, { "visibility": "on" }] }, { "featureType": "road.local", "stylers": [{ "saturation": 0 }, { "lightness": 40 }, { "visibility": "on" }] }, { "featureType": "transit", "stylers": [{ "saturation": 0 }, { "visibility": "simplified" }] }, { "featureType": "administrative.province", "stylers": [{ "visibility": "off" }] }, { "featureType": "water", "elementType": "labels", "stylers": [{ "visibility": "on" }, { "lightness": 0 }, { "saturation": 0 }] }, { "featureType": "water", "elementType": "geometry", "stylers": [{ "hue": "#8eb7ff" }, { "lightness": 0 }, { "saturation": 0 }] }];
+		var styles = [{"stylers":[{"visibility":"on"},{"saturation":-100},{"gamma":0.54}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"water","stylers":[{"color":"#4d4946"}]},{"featureType":"poi","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels.text","stylers":[{"visibility":"simplified"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"visibility":"simplified"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"gamma":0.48}]},{"featureType":"transit.station","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"gamma":7.18}]}]
 
 		map.set('styles', styles);
 
