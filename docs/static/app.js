@@ -51,11 +51,16 @@
 
 	//save event
     btnCreateSave.addEventListener('click', e =>{
+        if (!user){
+        	alert("Please log in to create events");
+        	return;
+        }
         const title = createtitle.value;
         const description = createdescription.value;
         const posWrite = pos;
 		if(!user) { alert("You need to sign in first!")}
         const userID = user.uid;
+        const eventTime = new Date();
         addMarker.setVisible(false);
         addWindow.close();
 
@@ -70,7 +75,7 @@
             alert('Please enter a description');
             return;
         }
-        saveEvent(title,description,posWrite,userID);
+        saveEvent(title,description,posWrite,userID,eventTime);
     });
         
     //State change for user
@@ -84,7 +89,7 @@
     		userSerssion(user);
 		} else {
 			user = null;
-			userSerssion(user)
+			userSerssion(user);
 		}
 	// 		userInfo = firebaseUser;
 	// 		btnLogout.classList.remove('hide');
@@ -102,7 +107,7 @@
 		if (user) {
 			btnLogout.classList.remove('hide');
 			loginForm.classList.add('hide')
-			console.log(user.uid);
+			console.log(user.uid + " is logged in");
 		} else {
 			console.log('not logged in');
 			btnLogout.classList.add('hide');
@@ -112,11 +117,14 @@
 
 
 	//Function to save events into firebase
-	function saveEvent(title, description, posWrite, userID) {
+	function saveEvent(title, description, posWrite, userID, eventTime) {
 		firebase.database().ref("Events/" + title).set({
 			Description : description, 
 			Position : posWrite,
-			UserID : userID
+			UserInfo : {
+				UserID : userID,
+				EventTime : eventTime.toString()
+			}
 		});
 	};
 
