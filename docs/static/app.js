@@ -51,6 +51,10 @@
 
 	//save event
     btnCreateSave.addEventListener('click', e =>{
+        if (!user){
+        	alert("Please log in to create events");
+        	return;
+        }
         const title = createtitle.value;
         const description = createdescription.value;
         const posWrite = pos;
@@ -85,7 +89,7 @@
     		userSerssion(user);
 		} else {
 			user = null;
-			userSerssion(user)
+			userSerssion(user);
 		}
 	// 		userInfo = firebaseUser;
 	// 		btnLogout.classList.remove('hide');
