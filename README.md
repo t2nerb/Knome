@@ -52,7 +52,5 @@ Team 6 Members
 
 How to
 ----------------------
-1. Install Virtualenv to set up the virtual environment: ```virtualenv .```
-2. Set path to the virtual environment: ```source bin/activate``` 
-3. Install dependencies with pip3: ```pip3 install -r requirements.txt```
-4. Run the app: ```python3 server.py```
+1. Go to [our github pages site.](https://t2nerb.github.io/Knome/)
+2. Create and share events!
