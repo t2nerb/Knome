@@ -1,15 +1,16 @@
 (function() {
 
-	// Initialize Firebase
+    // Initialize Firebase
   const config = {
-    apiKey: "AIzaSyBu25CVtUZakZ1eyA1H_m7E2ni12cl8tRE",
-    authDomain: "knomedb.firebaseapp.com",
-    databaseURL: "https://knomedb.firebaseio.com",
-    storageBucket: "knomedb.appspot.com",
-    messagingSenderId: "712655229098"
+    apiKey: "AIzaSyCPZd9X-l1LlbqJrDHbrLDE2FsF6fyWBV0",
+    authDomain: "knomedb-89499.firebaseapp.com",
+    databaseURL: "https://knomedb-89499.firebaseio.com",
+    storageBucket: "knomedb-89499.appspot.com",
+    messagingSenderId: "83063709381"
   };
   firebase.initializeApp(config);
 
+  	//User Auth Info
 	const txtEmail = document.getElementById('txtEmail');
 	const txtPassword = document.getElementById('txtPassword');
 	const btnLogin = document.getElementById('btnLogin');
@@ -17,7 +18,11 @@
 	const btnLogout = document.getElementById('btnLogout');
 	const loginForm = document.getElementById('login_form');
     const btnCreateSave = document.getElementById('btnCreateSave');
-
+    userInfo = null;
+    
+    //Write to DB info
+	const txtTitle = document.getElementById('createtitle');
+	const txtDescription = document.getElementById('createdescription');
 
 	//add login event
 	btnLogin.addEventListener('click', e => {
@@ -26,7 +31,7 @@
 		const auth = firebase.auth();
 		//sign in
 		const promise = auth.signInWithEmailAndPassword(email, pass);
-		promise.catch(e => console.log(e.message));
+		promise.catch(e => alert(e.message));
 	});
 	//sign up
 	btnSignUp.addEventListener('click', e =>{
@@ -37,40 +42,64 @@
 		//sign in
 		const promise = auth.createUserWithEmailAndPassword(email, pass);
 		promise
-			.catch(e => console.log(e.message));
+			.catch(e => alert(e.message));
 	});
-
+	//sign out
 	btnLogout.addEventListener('click', e => {
 		firebase.auth().signOut();
 	});
-    
+
+
+	//save event
     btnCreateSave.addEventListener('click', e =>{
         const title = createtitle.value;
-        const desc = createtitle.value;
+        const description = createdescription.value;
+        const posWrite = pos;
+        addMarker.setVisible(false);
+        addWindow.close();
+
+        //error handling for event creation
         if (title == ""){
-            console.log("no title input")
+            console.log("NULL title")
+            alert('Please enter a title');
+            return;
         }
-        if (desc == ""){
-            console.log("no desc input")
+        if (description == ""){
+            console.log("NULL description")
+            alert('Please enter a description');
+            return;
         }
-        
+        saveEvent(title,description,posWrite);
     });
         
-
+    //State change for user
 	firebase.auth().onAuthStateChanged(firebaseUser => {
 		if (firebaseUser){
-			console.log(firebaseUser);
+			userInfo = firebaseUser;
 			btnLogout.classList.remove('hide');
 			loginForm.classList.add('hide')
 		} else {
+			userInfo = null;
 			console.log('not logged in');
 			btnLogout.classList.add('hide');
 			loginForm.classList.remove('hide')
 		}
 	});
 
+	//Maybe nothing?
+	// var userID = document.getElementById('userID');
+	// var dbRef = firebase.database().ref().child('text');
+	// //dbRef.on('value', snap => userID.innerText = snap.val());
 
-	var userID = document.getElementById('userID');
-	var dbRef = firebase.database().ref().child('text');
-	//dbRef.on('value', snap => userID.innerText = snap.val());
+	//Function to save events into firebase
+	function saveEvent(title, description, posWrite) {
+		firebase.database().ref("Events/" + title).set({
+			Description : description, 
+			Position : posWrite
+		});
+	};
+
+    function bootstrap_alert(message) {
+        $('#alert_placeholder').html('<div class="alert"><a class="close" data-dismiss="alert">×</a><span>'+message+'</span></div>')
+    }
 }());

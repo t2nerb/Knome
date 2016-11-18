@@ -16,10 +16,10 @@
 	<div class="container">
 		<!--TO FILL PAGE, CHANGE THIS CLASS TO "fluid-container" -->
 		<div class="row">
-			<div class="col-lg-6">
+			<div class="col-xs-6">
 				<a href="#top"><img src="static/img/Knome-01.jpg" class="img-responsive" height="150px"></a>
 			</div>
-			<div class="col-lg-6">
+			<div class="col-xs-6">
 				<div id="login">
 					<div id="login_form">
 						<button type="button" class="btn btnCollapse btn-info btn-block" data-toggle="collapse" data-target="#demo">Need to log in?</button>
@@ -58,28 +58,28 @@
 					<div class="modal-body">
                         <div class="form-group">
                             <label>Title</label>
-                            <input type="text" class="form-control" id="createtitle" placeholder="Title">
+                            <input id="createtitle" type="text" placeholder="Title">
                         </div>
                         <div class="form-group">
                             <label>Description</label>
-                            <input type="text" class="form-control" id="createdescription" placeholder="Description">
+                            <input id="createdescription" type="text" placeholder="Description">
                         </div>
 					</div>
 
+                    <div class="modal-footer">
+
+                    <!-- <div id = "alert_placeholder"></div> -->
 
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button id="btnCreateSave" type="button" class="btn btn-primary btn-default" data-dismiss="modal">Save</button>
-					</div>
+						<button id="btnCreateSave" type="button" class="btn btn-primary btn-default" data-dismiss="modal">Create</button>
 				</div>
 			</div>
 		</div>
 	</div>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_WDN2dF6uAIlN58lhCDZlyQg8eLHV8ac"></script>
 	<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
-	<script src="static/app.js"></script>
 	<script src="static/map.js"></script>
-	<script src="static/login.js"></script>
-	<script src="static/event.js"></script>
+	<script src="static/app.js"></script>
 </body>
 
 </html>
