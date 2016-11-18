@@ -1,14 +1,14 @@
 (function() {
 
-    // Initialize Firebase
-  const config = {
-    apiKey: "AIzaSyCPZd9X-l1LlbqJrDHbrLDE2FsF6fyWBV0",
-    authDomain: "knomedb-89499.firebaseapp.com",
-    databaseURL: "https://knomedb-89499.firebaseio.com",
-    storageBucket: "knomedb-89499.appspot.com",
-    messagingSenderId: "83063709381"
+  // Initialize Firebase
+  	const config = {
+    	apiKey: "AIzaSyCPZd9X-l1LlbqJrDHbrLDE2FsF6fyWBV0",
+    	authDomain: "knomedb-89499.firebaseapp.com",
+    	databaseURL: "https://knomedb-89499.firebaseio.com",
+    	storageBucket: "knomedb-89499.appspot.com",
+    	messagingSenderId: "83063709381"
   };
-  firebase.initializeApp(config);
+  	firebase.initializeApp(config);
 
   	//User Auth Info
 	const txtEmail = document.getElementById('txtEmail');
@@ -18,7 +18,6 @@
 	const btnLogout = document.getElementById('btnLogout');
 	const loginForm = document.getElementById('login_form');
     const btnCreateSave = document.getElementById('btnCreateSave');
-    userInfo = null;
     
     //Write to DB info
 	const txtTitle = document.getElementById('createtitle');
@@ -55,6 +54,7 @@
         const title = createtitle.value;
         const description = createdescription.value;
         const posWrite = pos;
+        const userID = user.uid;
         addMarker.setVisible(false);
         addWindow.close();
 
@@ -69,33 +69,53 @@
             alert('Please enter a description');
             return;
         }
-        saveEvent(title,description,posWrite);
+        saveEvent(title,description,posWrite,userID);
     });
         
     //State change for user
 	firebase.auth().onAuthStateChanged(firebaseUser => {
-		if (firebaseUser){
-			userInfo = firebaseUser;
+		if (firebaseUser) {
+			user = firebase.auth().currentUser;
+    		if (user != null) {
+    			email = user.email;
+    			uid = user.uid;
+    		}
+    		userSerssion(user);
+		} else {
+			user = null;
+			userSerssion(user)
+		}
+	// 		userInfo = firebaseUser;
+	// 		btnLogout.classList.remove('hide');
+	// 		loginForm.classList.add('hide')
+	// 	} else {
+	// 		userInfo = null;
+	// 		console.log('not logged in');
+	// 		btnLogout.classList.add('hide');
+	// 		loginForm.classList.remove('hide')
+	// 	}
+	});
+
+	
+	function userSerssion (user){
+		if (user) {
 			btnLogout.classList.remove('hide');
 			loginForm.classList.add('hide')
+			console.log(user.uid);
 		} else {
-			userInfo = null;
 			console.log('not logged in');
 			btnLogout.classList.add('hide');
 			loginForm.classList.remove('hide')
 		}
-	});
+	};
 
-	//Maybe nothing?
-	// var userID = document.getElementById('userID');
-	// var dbRef = firebase.database().ref().child('text');
-	// //dbRef.on('value', snap => userID.innerText = snap.val());
 
 	//Function to save events into firebase
-	function saveEvent(title, description, posWrite) {
+	function saveEvent(title, description, posWrite, userID) {
 		firebase.database().ref("Events/" + title).set({
 			Description : description, 
-			Position : posWrite
+			Position : posWrite,
+			UserID : userID
 		});
 	};
 
