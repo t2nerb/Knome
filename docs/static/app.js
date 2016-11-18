@@ -54,6 +54,7 @@
         const title = createtitle.value;
         const description = createdescription.value;
         const posWrite = pos;
+		if(!user) { alert("You need to sign in first!")}
         const userID = user.uid;
         addMarker.setVisible(false);
         addWindow.close();
