@@ -1,0 +1,20 @@
+Team Retrospective
+
+Good:
+	-Strong communication through Slack and Github projects
+	-Pair programming has been very useful in completing tasks efficently 
+	-Support from both frontend and backend teams on all aspects of the project
+	-Milestones have been completed with quality work on time
+	-We have a working product that meet our expectations 
+Bad:
+	-Roles were not well defined leaving some ambiguity in task allocation 
+	-Firebase steep learning curve and debugging difficulties made some tasks take longer than expected
+	-In person meetings increased our productivity so more of those would accelerate the project
+	-Differences in coding styles made bringing the idividual pieces of the project together more difficult
+	-A smaller team would be more efficent 
+Plan Going Forward:
+	-Meet in person more frequently to finish the project
+	-Discuss reach goals and the requirements and intrest in meeting them
+	-Correct minor bugs in the project
+	-Prepare a final presentation the showcases our product
+	

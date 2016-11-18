@@ -15,14 +15,9 @@ $(function () {
 		var map = new google.maps.Map(mapCanvas, mapOptions);
 		var markerImage = './static/img/marker.png';
 		var addImage = './static/img/smallplus.png'
-		var marker = new google.maps.Marker({
-			position: location,
-			map: map,
-			icon: markerImage
-		});
 
-		var addWindow = new google.maps.InfoWindow({ map: map });
-		var addMarker = new google.maps.Marker({
+		addWindow = new google.maps.InfoWindow({ map: map });
+		addMarker = new google.maps.Marker({
 			map: map,
 			icon: markerImage
 		});
@@ -31,9 +26,10 @@ $(function () {
 			addWindow.open(map, addMarker);
 		});
 
+		//find user and prompt for new event
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function (position) {
-				var pos = {
+				 pos = {
 					lat: position.coords.latitude,
 					lng: position.coords.longitude
 				};
@@ -45,60 +41,49 @@ $(function () {
 					+ '</button>');
 				map.setCenter(pos);
 				addWindow.open(map, addMarker);
+				map.addListener('click', function () {
+					addWindow.close(map, addMarker);
+				});
 			}, function () {
-				handleLocationError(true, newMarker, map.getCenter());
+				handleLocationError(true, addMarker, map.getCenter());
 
 			});
 		} else {
 			// Browser doesn't support Geolocation
-			handleLocationError(false, newMarker, map.getCenter());
+			handleLocationError(false, addMarker, map.getCenter());
 		}
 
+		//pull in all events from previous sessions
+		dbEventsObject = firebase.database().ref().child('Events/');
+		dbEventsObject.on('child_added', snap=> {
+			//adds markers for each event
+			var newMarker = new google.maps.Marker({
+				map: map,
+				icon: markerImage
+			});
+			newMarker.setPosition(snap.val().Position);
 
-
-		//Have to dynamically update reads - Using snapshots, we can do this with an event handler. - jquery
-		var database = firebase.database()
-
-		function readEventdata(event, Char) {
-			var eventinfo = firebase.database().ref('Events/' + event + '/' + Char);
-			eventinfo.on('value', function (snapshot) {
-				console.log(postElement, snapshot.val())
-			})
-		}
-
-
-		function writeEventData(eventname, location, price, time, type, agerec) {
-			firebase.database().ref('Events/' + eventame).set(
-				{
-					Location: location,
-					Price: price,
-					Time: time,
-					ageRec: agerec,
-					Type: type
-				}
-			)
-		}
-
-		var eventName = 'FUN TIMES';
-		var eventDetails = 'WOW THIS IS FUN';
-
-		var contentString = '<div class="info-window">' +
+			//info for window for each event
+			eventDetails = snap.val().Description;
+			eventName = snap.key;
+			var contentString = '<div class="info-window">' +
 			'<h3 class="brand"> ' + eventName + ' </h3>' +
 			'<div class="info-content">' +
 			'<p> ' + eventDetails + ' </p>' +
 			'</div>' +
 			'</div>';
-
-		var infowindow = new google.maps.InfoWindow({
+			var infowindow = new google.maps.InfoWindow({
 			content: contentString,
 			maxWidth: 400
-		});
+			});
 
-		marker.addListener('click', function () {
-			infowindow.open(map, marker);
-		});
-		map.addListener('click', function () {
-			infowindow.close(map, marker);
+			//opens and closes windows
+			newMarker.addListener('click', function() {
+				infowindow.open(map, newMarker);
+			});
+			map.addListener('click', function () {
+				infowindow.close(map, newMarker);
+			});
 		});
 
 		var styles = [{"stylers":[{"visibility":"on"},{"saturation":-100},{"gamma":0.54}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"water","stylers":[{"color":"#4d4946"}]},{"featureType":"poi","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels.text","stylers":[{"visibility":"simplified"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"visibility":"simplified"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"gamma":0.48}]},{"featureType":"transit.station","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"gamma":7.18}]}]
