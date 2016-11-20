@@ -52,7 +52,6 @@
 		firebase.auth().signOut();
 	});
 
-
 	//save event
     btnCreateSave.addEventListener('click', e =>{
         if (!user){
@@ -70,12 +69,12 @@
 
         //error handling for event creation
         if (title == ""){
-            console.log("NULL title")
+            console.log("NULL title");
             alert('Please enter a title');
             return;
         }
         if (description == ""){
-            console.log("NULL description")
+            console.log("NULL description");
             alert('Please enter a description');
             return;
         }
@@ -105,7 +104,7 @@
 	function userSerssion (user){
 		if (user) {
 			btnLogout.classList.remove('hide');
-			loginForm.classList.add('hide')
+			loginForm.classList.add('hide');
 			console.log(user.uid + " is logged in");
 			loginName.classList.remove('hide');
 			firebase.database().ref('Users/' + user.uid).once('value').then(function(snapshot) {
