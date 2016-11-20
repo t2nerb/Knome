@@ -16,28 +16,31 @@
 	<div class="container">
 		<!--TO FILL PAGE, CHANGE THIS CLASS TO "fluid-container" -->
 		<div class="row">
-			<div class="col-xs-6">
+			<div class="col-sm-6">
 				<a href="index.html"><img src="static/img/Knome-01.jpg" class="img-responsive" height="150px"></a>
 			</div>
-			<div class="col-xs-6">
+			<div class="col-sm-6">
 				<div id="login">
 					<div id="login_form">
 						<button type="button" class="btn btnCollapse btn-info btn-block" data-toggle="collapse" data-target="#demo">Need to log in?</button>
 						<div id="demo" class="collapse">
 							<input id="txtEmail" type="email" placeholder="Email">
-
 							<input id="txtPassword" type="password" placeholder="Password">
-
+							<div class="collapse" id='signup_form'>
+								<input id="firstName" type="text" placeholder="First Name">
+								<input id="lastName" type="text" placeholder="Last Name">
+								<button type="button" id="btnSignUp" class="btn btn-secondary btn-block" >Sign Up</button>
+							</div>
 							<button id="btnLogin" class="btn btn-action btn-knome btn-block">
-						Log in
-					</button>
-
-							<button id="btnSignUp" class="btn btn-secondary btn-success btn-block">
-						Sign Up
-					</button>
+								Log in
+							</button>
+							<button type="button" id="openSignUpForm" class="btn btn-secondary btnCollapse btn-block" data-target="#signup_form" data-toggle="collapse">
+								Need to sign up?
+							</button>
 						</div>
 					</div>
-					<button id="btnLogout" class="btn btn-action btn-danger hide btn-block">
+					<h1 id="loginName"></h1>
+					<button id="btnLogout" class="btn btn-action btn-danger btn-block">
 						Log Out
 					</button>
 				</div>
