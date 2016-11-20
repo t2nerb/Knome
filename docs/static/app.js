@@ -107,6 +107,7 @@
 			btnLogout.classList.remove('hide');
 			loginForm.classList.add('hide')
 			console.log(user.uid + " is logged in");
+			loginName.classList.remove('hide');
 			firebase.database().ref('Users/' + user.uid).once('value').then(function(snapshot) {
 				firstName = snapshot.val().FirstName;
 				document.getElementById("loginName").innerHTML = "Hi, " + firstName;
@@ -115,6 +116,7 @@
 			console.log('not logged in');
 			btnLogout.classList.add('hide');
 			loginForm.classList.remove('hide')
+			loginName.classList.add('hide');
 		}
 	};
 
