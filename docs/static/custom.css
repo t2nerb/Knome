@@ -1,6 +1,7 @@
 body {
 	font-family: 'Montserrat', sans-serif;
 }
+
 h1{
 	letter-spacing: 0.06em; margin-bottom: 10px; text-align: center;
 }
@@ -35,19 +36,4 @@ h3{
 
 .brand{
 	color: #FF931E;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  position: relative;
-  float: right;
-  background: #eee;
-  border-bottom: 1px solid #fff;
-  border-radius: 3px;    
-}
-
-nav li {
-  float: left;          
 }
