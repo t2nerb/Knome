@@ -36,6 +36,7 @@
 		const promise = auth.signInWithEmailAndPassword(email, pass);
 		promise.catch(e => alert(e.message));
 	});
+
 	//sign up
 	btnSignUp.addEventListener('click', e =>{
 		// TODO: check real email
@@ -48,6 +49,7 @@
 		promise
 			.catch(e => alert(e.message));
 	});
+
 	//sign out
 	btnLogout.addEventListener('click', e => {
 		firebase.auth().signOut();
@@ -56,7 +58,6 @@
 	btnSignUpForm.addEventListener('click', e=> {
 		btnLogin.classList.add('hide');
 	});
-
 
 	//save event
     btnCreateSave.addEventListener('click', e =>{
