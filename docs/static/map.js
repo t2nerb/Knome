@@ -14,7 +14,7 @@ $(function () {
 		}
 		var map = new google.maps.Map(mapCanvas, mapOptions);
 		var markerImage = './static/img/marker.png';
-		var addImage = './static/img/smallplus.png'
+		var addImage = './static/img/smallplus.png';
 
 		addWindow = new google.maps.InfoWindow({ map: map });
 		addMarker = new google.maps.Marker({
