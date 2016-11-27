@@ -146,6 +146,16 @@
 		});
 	};
 
+	function removeEvent(title, userinfo){
+		firebase.database().ref('Events/' + title).once('value').then(function(snapshot) {
+		creator = snapshot.val().creator;
+		}
+	);
+		if(userinfo == creator){
+			firebase.database().ref("Events/" + title).remove();
+		}
+	}
+
 	function saveUser(firstName, lastName, userID){
 		firebase.database().ref("Users/" + userID).set({
 			FirstName : firstName,
