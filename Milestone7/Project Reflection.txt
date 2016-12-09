@@ -1,1 +1,3 @@
-
+Write up a final project reflection on the successful/unsuccessful use of each of the 
+software methods and tools used in the project. It should incluce specific examples
+from the project.
