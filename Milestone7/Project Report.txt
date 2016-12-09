@@ -1,1 +1,19 @@
+Write'up'on'the'status'of'the'project'based'on'its'goals'and'
+objectives.'
+Include'a'list'of'accomplishments,'outstanding'issues,'and'a'
+plan'to'reach'the'goals'in'the'future.'
 
+Status:
+    We have a working website at https://t2nerb.github.io/Knome/, with login/logout and the ability to add events to the map. In addition, the map displays all the events in the user's scope, and updates in real time with any added events.
+
+Accomplishments:
+    - A simple and clean website
+    - User login/logout and account creation
+    - Event viewing through a map
+    - Event creation though an icon on the map
+    - Variable scope of how many events are shown through map scrolling
+
+Outstanding Problems:
+    - Events exist forever after creation
+    - There is no 'voting' system for showing if an event is real/good
+    - There is no forgot password system
