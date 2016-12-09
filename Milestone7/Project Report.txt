@@ -1,8 +1,3 @@
-Write'up'on'the'status'of'the'project'based'on'its'goals'and'
-objectives.'
-Include'a'list'of'accomplishments,'outstanding'issues,'and'a'
-plan'to'reach'the'goals'in'the'future.'
-
 Status:
     We have a working website at https://t2nerb.github.io/Knome/, with login/logout and the ability to add events to the map. In addition, the map displays all the events in the user's scope, and updates in real time with any added events.
 
@@ -17,3 +12,6 @@ Outstanding Problems:
     - Events exist forever after creation
     - There is no 'voting' system for showing if an event is real/good
     - There is no forgot password system
+
+Plan to fix Outstanding Problems:
+    Currently, we plan to continue work much as we have for this semster. Coordinating through Slack and Github Projects/Issues, we will track bugs and issues and fix them as they arise. 
