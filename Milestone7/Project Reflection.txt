@@ -1,3 +1,13 @@
-Write up a final project reflection on the successful/unsuccessful use of each of the 
-software methods and tools used in the project. It should incluce specific examples
-from the project.
+Successful:
+  Use of Slack to have contact:
+    Was very successful because we could quickly come up with ideas and talk about the issues we were having.
+  Use of GitHub to sync code and build off eachother's code
+  
+Unsuccessful:
+  Initial choices of technologies:
+    AngularJS:
+      We decided it was not necessary to constrain ourselves 
+    Flask:
+    MySQL
+  Trello
+  
