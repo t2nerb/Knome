@@ -21,7 +21,7 @@
    - We decided it was not necessary to constrain ourselves to a specific JS framework, vanilla JS was fine
 - Flask:
    - Although flask would've been ideal for scaling to new platforms and building out more features, it proved too steep a learning curve to expect our whole team to learn.
- - MySQL:
+- MySQL:
    - An obvious first choice, we ditched when we decided to use Firebase which offered realtime updates to our map
 - Trello:
    - Obviously a great product, but it made more sense to go with Github's projects because that was our homebase for our code and hosting
