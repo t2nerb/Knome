@@ -12,17 +12,17 @@
 	firebase.initializeApp(config);
 
 	//User Auth Info
-  const txtEmail = document.getElementById('txtEmail');
-  const txtPassword = document.getElementById('txtPassword');
-  const btnLogin = document.getElementById('btnLogin');
-  const btnSignUp = document.getElementById('btnSignUp');
-  const btnLogout = document.getElementById('btnLogout');
-  const loginForm = document.getElementById('login_form');
-  const btnCreateSave = document.getElementById('btnCreateSave');
-  const txtFirstName = document.getElementById('firstName');
-  const txtLastName = document.getElementById('lastName');
-  const btnSignUpForm = document.getElementById('openSignUpForm')
-  newUser = false;
+	const txtEmail = document.getElementById('txtEmail');
+	const txtPassword = document.getElementById('txtPassword');
+	const btnLogin = document.getElementById('btnLogin');
+	const btnSignUp = document.getElementById('btnSignUp');
+	const btnLogout = document.getElementById('btnLogout');
+	const loginForm = document.getElementById('login_form');
+	const btnCreateSave = document.getElementById('btnCreateSave');
+	const txtFirstName = document.getElementById('firstName');
+	const txtLastName = document.getElementById('lastName');
+	const btnSignUpForm = document.getElementById('openSignUpForm')
+	newUser = false;
 
   //Write to DB info
 	const txtTitle = document.getElementById('createtitle');
@@ -154,7 +154,7 @@
 		if(userinfo == creator){
 			firebase.database().ref("Events/" + title).remove();
 		}
-	}
+	};
 
 	function saveUser(firstName, lastName, userID){
 		firebase.database().ref("Users/" + userID).set({
@@ -165,5 +165,5 @@
 
     function bootstrap_alert(message) {
         $('#alert_placeholder').html('<div class="alert"><a class="close" data-dismiss="alert">×</a><span>'+message+'</span></div>')
-    }
+    };
 }());
