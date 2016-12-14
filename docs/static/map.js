@@ -73,8 +73,8 @@ $(function () {
 			'</div>' +
 			'</div>';
 			var infowindow = new google.maps.InfoWindow({
-			content: contentString,
-			maxWidth: 400
+				content: contentString,
+				maxWidth: 400
 			});
 
 			//opens and closes windows
