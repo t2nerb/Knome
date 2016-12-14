@@ -11,7 +11,7 @@ real time with any added events.
 - Variable scope of how many events are shown through map scrolling
 
 ## Outstanding Problems
-- Events exist forever after creation
+- Events exist forever after creation requiring the database manager to delete them manually.
 - There is no 'voting' system for showing if an event is real/good
 - There is no forgot password system
 
